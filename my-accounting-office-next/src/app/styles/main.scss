@@ -1,0 +1,14 @@
+//views
+@import 'views/dashboard/dashboard.scss';
+
+//components
+@import 'components/navbar.scss';
+@import 'components/loading.scss';
+
+//variables
+@import 'variables.scss';
+
+body {
+    width: 100%;
+    height: 100%;
+}
