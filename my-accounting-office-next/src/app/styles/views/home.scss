@@ -1,0 +1,33 @@
+.home {
+    margin-top: $dashboards-margin-top;
+    background-image: url('../../../images/home-background.webp');
+    background-position: center;
+    height: calc(100vh - $dashboards-margin-top);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 10%;
+
+    &-title {
+        font-size: 3rem;
+        color: white;
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+
+    &-subtitle {
+        font-size: 1.5rem;
+        color: white;
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+
+    &-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: white;
+    }
+}

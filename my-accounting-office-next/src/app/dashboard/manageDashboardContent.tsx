@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { dashboardPageTypes } from "./page";
 import Settings from "./[pages]/settings";
 import { Session } from "next-auth";
+import StartDashboard from "./[pages]/start";
 
 export default function ManageDashboardContent(props: { dashboardPage: dashboardPageTypes, session: Session | null}) {
     const [dashboardName, setDashboardName] = useState<string>("");
@@ -30,7 +31,7 @@ export default function ManageDashboardContent(props: { dashboardPage: dashboard
     function manageDashboardContent(): JSX.Element {
         switch (props.dashboardPage) {
             case dashboardPageTypes.start:
-                return <div>Start Page Content</div>;
+                return <StartDashboard session={props.session} />;
             case dashboardPageTypes.settings:
                 return <Settings session={props.session} />;
             case dashboardPageTypes.clients:

@@ -1,6 +1,6 @@
 'use client';
-import Loading from "@/app/components/loading";
-import { DefaultSession, Session } from "next-auth";
+import Loading from "@/app/[components]/loading";
+import { Session } from "next-auth";
 import React, { useEffect, useState } from "react"
 
 interface SettingsProps {

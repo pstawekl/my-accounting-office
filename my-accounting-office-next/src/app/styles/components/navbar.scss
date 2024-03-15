@@ -34,7 +34,7 @@
             justify-content: flex-end;
             align-items: center;
 
-            .nav-item {
+            .nav-item, .nav-dropdown-item {
                 height: 100%;
                 display: flex;
                 flex-direction: row;
@@ -44,6 +44,11 @@
                     border-top: 3px solid $active-element-border-color;
 
                     a {
+                        background-color: whitesmoke;
+                        color: black;
+                    }
+
+                    span {
                         background-color: whitesmoke;
                         color: black;
                     }
@@ -64,6 +69,43 @@
                     &:hover {
                         background-color: lightgray;
                         color: black;
+                    }
+                }
+
+                span {
+                    display: flex;
+                    align-items: center;
+                    height: 100%;
+                    transition: .5s;
+                    padding: 0 10px;
+                    &:hover {
+                        color: black;
+                        cursor: pointer;
+                        background-color: whitesmoke;
+                    }
+                }
+            }
+
+            .language-dropdown {
+                position: fixed;
+                top: calc($dashboards-margin-top);
+                right: 0;
+                left: auto;
+                background-color: $active-element-border-color;
+                padding: 20px 0;
+                border-bottom-left-radius: 15%;
+
+                div.nav-link {
+                    padding: 0 20px;
+                    width: 100%;
+                    height: auto;
+                    transition: .5s;
+                    
+                    &:hover {
+                        cursor: pointer;
+                        background-color: whitesmoke;
+                        color: black;
+                        border-radius: 5%;
                     }
                 }
             }

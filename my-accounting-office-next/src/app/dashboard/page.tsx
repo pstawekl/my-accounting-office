@@ -1,7 +1,7 @@
 import { Session, getServerSession } from "next-auth";
 import { authOptions } from "../api/auth/[...nextauth]/options";
 import Dashboard from "./dashboard";
-import Loading from "../components/loading";
+import Loading from "../[components]/loading";
 
 export enum dashboardPageTypes {
     start = "start",

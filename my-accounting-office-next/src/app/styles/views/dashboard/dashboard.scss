@@ -17,7 +17,6 @@
             rgba(0, 104, 255, 1) 30%,
             rgba(0, 151, 255, 1) 100%
         );
-        border-right: 1px solid lightgray;
         justify-content: space-between;
 
         .dashboard-pages {
@@ -109,7 +108,7 @@
         &-name {
             width: 100%;
             background: whitesmoke;
-            border-bottom: 1px solid black;
+            border-bottom: 1px solid lightgray;
             height: 40px;
             display: flex;
             justify-content: start;
@@ -121,7 +120,7 @@
 
         &-content {
             width: 100%;
-            height: auto;
+            height: 100%;
             padding: 10px;
         }
     }
