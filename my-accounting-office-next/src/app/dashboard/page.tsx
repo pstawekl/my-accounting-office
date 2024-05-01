@@ -1,7 +1,8 @@
-import { Session, getServerSession } from "next-auth";
-import { authOptions } from "../api/auth/[...nextauth]/options";
+'use client'
+import { Session } from "next-auth";
 import Dashboard from "./dashboard";
 import Loading from "../[components]/loading";
+import { useEffect, useState } from "react";
 
 export enum dashboardPageTypes {
     start = "start",
@@ -11,13 +12,27 @@ export enum dashboardPageTypes {
     clientsAccounts = "clientsAccounts"
 }
 
-export default async function DashboardPage() {
-    const session: Session | null = await getServerSession(authOptions);
+export default function DashboardPage() {
+    const [session, setSession] = useState<Session | null>(null);
 
-    const user = session?.user;
+    useEffect(() => {
+        fetch('/api/user-session/get', {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        }).then(response => response.json()).then(
+            data => {
+                const session: Session = data.session;
+                setSession(session);
+            }
+        ).catch(error => {
+            console.error('Błąd podczas pobierania sesji użytkownika:', error);
+        });
+    }, [])
 
-    if (user)
-        return (
-            <Dashboard session={session} />
-       ); else return <Loading />;
+    if (session)
+        return <Dashboard session={session as Session} />
+    else
+        return <Loading />;
 }

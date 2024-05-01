@@ -1,13 +1,9 @@
 'use client'
 
-import { Session, getServerSession } from "next-auth";
+import { Session } from "next-auth";
 import Navbar from "../[components]/navbar";
-import { authOptions } from "../api/auth/[...nextauth]/options";
 import React, { useEffect, useState } from "react";
 import ManageDashboardContent from "./manageDashboardContent";
-import { useSession } from "next-auth/react";
-import { SessionProvider } from 'next-auth/react';
-import Loading from "../[components]/loading";
 
 export enum dashboardPageTypes {
     start = "start",
